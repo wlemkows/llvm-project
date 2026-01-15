@@ -13,4 +13,8 @@ macro(add_openmp_tool_symlink name)
 endmacro()
 
 add_subdirectory(deviceinfo)
-add_subdirectory(kernelreplay)
+
+# kernelreplay requires libomptarget which is not available on Windows
+if(NOT WIN32)
+  add_subdirectory(kernelreplay)
+endif()

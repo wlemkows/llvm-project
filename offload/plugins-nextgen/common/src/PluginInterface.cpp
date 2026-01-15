@@ -354,7 +354,7 @@ public:
 
     INFO(OMP_INFOTYPE_PLUGIN_KERNEL, Device->getDeviceId(),
          "Record Replay Initialized (%p)"
-         " as starting address, %lu Memory Size"
+         " as starting address, %zu Memory Size"
          " and set on status %s\n",
          MemoryStart, TotalSize,
          Status == RRStatusTy::RRRecording ? "Recording" : "Replaying");

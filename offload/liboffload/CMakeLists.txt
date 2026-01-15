@@ -12,7 +12,10 @@ add_llvm_library(
   DEPENDS
   OffloadAPI
   PluginErrcodes
+  PluginCommon
   )
+
+target_link_libraries(LLVMOffload PRIVATE PluginCommon)
 
 foreach(plugin IN LISTS LIBOMPTARGET_PLUGINS_TO_BUILD)
     target_link_libraries(LLVMOffload PRIVATE omptarget.rtl.${plugin})
